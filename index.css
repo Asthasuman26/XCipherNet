@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(145deg, #0a0d14 0%, #141824 100%);
+  animation: gradientBG 15s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px) 0 0 / 20px 20px,
+    linear-gradient(0deg, rgba(0, 255, 157, 0.03) 1px, transparent 1px) 0 0 / 20px 20px;
+  animation: matrixBG 20s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes matrixBG {
+  from { background-position: 0 0; }
+  to { background-position: 20px 20px; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background: linear-gradient(90deg, #00f0ff, #00ff9d, #7000ff, #ff00f5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 6s linear infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+p, span, div {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
+  color: #00ff9d;
+  background: rgba(0, 255, 157, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+  text-shadow: 0 0 5px rgba(0, 255, 157, 0.5);
+}
+
+::selection {
+  background: rgba(112, 0, 255, 0.3);
+  color: #00ff9d;
+}
+
+.button {
+  background: linear-gradient(90deg, #7000ff, #ff00f5);
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #ff00f5, #7000ff);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(112, 0, 255, 0.5);
+}
